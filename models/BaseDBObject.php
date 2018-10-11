@@ -163,7 +163,9 @@ abstract class BaseDBObject {
 
         $rows = $this->runQuery($query);
 
-        return $rows['RowCount'];
+        $count = $rows[0]['RowCount'];
+
+        return $count;
     }
 
     private function getCountQuery() {

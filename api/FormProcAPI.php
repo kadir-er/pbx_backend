@@ -10,6 +10,10 @@ require_once CONTROLER_FOLDER . 'RepresentorController.php';
 require_once dirname(__FILE__) . '/api_constants.php';
 require_once dirname(dirname(__FILE__)) . '/models/NumberPool.php';
 
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: *");
+header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+
 class FormProcAPI {
 
     public function processFormContent(array $form_content) {
@@ -68,7 +72,7 @@ class FormProcAPI {
      * @param array $form_content
      * @param int   $firm_id
      */
-    publıc function createBill(array $form_content, int $firm_id) {
+    public function createBill(array $form_content, int $firm_id) {
         $sub_numbers = $this->extractValFromArray($form_content, SELECTED_SUB_NUMBERS);
         $contract_time = $this->extractValFromArray($form_content, CONTRACT_TIME);
         $BillCreator = new BillCreator();

@@ -2,6 +2,10 @@
 
 require_once dirname(dirname(__FILE__)) . '/controllers/NumberPoolController.php';
 
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: *");
+header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+
 class NumberPoolAPI {
 
     public function getFreeNumbers() {
